@@ -1,6 +1,6 @@
 
 class Solution(object):
-    def bruteForce(self, nums, target):
+    def bruteForce(self, nums: list[int], target: int):
         """
         :type nums: List[int]
         :type target: int
@@ -26,7 +26,7 @@ class Solution(object):
                     if nums[i] + nums[j] == target:
                         return [i, j]
                 
-    def bruteForceV2(self, nums, target):
+    def bruteForceV2(self, nums: list[int], target: int):
         """
         Same as previous version but does not 
         check previous sum of numbers
@@ -37,7 +37,7 @@ class Solution(object):
                 if nums[i] + nums[j] == target:
                     return [i, j]
 
-    def hashmap(self, nums, target):
+    def hashmap(self, nums: list[int], target: int) -> list[int] | None:
         """
         Used a hashmap to allow for 1 loop through
         nums and store value, indice pairs. We first 
@@ -58,7 +58,7 @@ class Solution(object):
                 return [i, hashmap[val]]
             hashmap[nums[i]] = i
 
-    def best(self, nums, target):
+    def best(self, nums: list[int], target: int) -> list[int] | None:
         """
         Same approach as before but simplified. Use 
         enumerate to get the index and value in a for 

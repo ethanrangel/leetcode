@@ -1,5 +1,5 @@
 class Solution(object):
-    def firstAttempt(self, nums):
+    def firstAttempt(self, nums: list[int]) -> bool:
         """
         :type nums: List[int]
         :rtype: bool
@@ -10,15 +10,15 @@ class Solution(object):
         Output: true
 
         Use a hashset and iterate through
-        the list while adding the value
-        if value does not exist in set. 
+        the list while adding the value,
+        if the value does not exist in set. 
         Else, return True.
 
         Time: O(N)
         Space: O(N)
         """
 
-        empty = set()
+        empty: set[int] = set()
         for num in nums:
             if num not in empty:
                 empty.add(num)
@@ -30,7 +30,7 @@ class Solution(object):
         """
         cleaner implementation
         """
-        seen = set()
+        seen: set[int]= set()
         
         for num in nums:
             if num in seen:
