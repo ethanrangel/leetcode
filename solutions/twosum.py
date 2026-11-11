@@ -18,7 +18,7 @@ class Solution(object):
         Time: O(N^2), in the worst case the list 
         gets iterated for every value nums
 
-        Space: O(1), no datastructures created
+        Space: O(1), no datastructure created
         """
         for i in range(len(nums)):
             for j in range(len(nums)):
@@ -46,7 +46,7 @@ class Solution(object):
         else append pair to hashmap
 
         Time: O(N), in the worst case, we iterate
-        though the list once
+        through the list once
 
         Space: O(N), created hashmap but its value are
         limited to the n values in list
@@ -60,7 +60,7 @@ class Solution(object):
 
     def best(self, nums, target):
         """
-        same approach as before but simplified. Use 
+        Same approach as before but simplified. Use 
         enumerate to get the index and value in a for 
         loop.
         """
@@ -70,6 +70,4 @@ class Solution(object):
             if need in seen:
                 return [index, seen[need]] 
             seen[value] = index
-
-        
 
