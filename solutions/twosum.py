@@ -1,6 +1,6 @@
 
 class Solution(object):
-    def bruteForce(self, nums: list[int], target: int):
+    def bruteForce(self, nums: list[int], target: int) -> list[int] | None:
         """
         :type nums: List[int]
         :type target: int
@@ -26,7 +26,7 @@ class Solution(object):
                     if nums[i] + nums[j] == target:
                         return [i, j]
                 
-    def bruteForceV2(self, nums: list[int], target: int):
+    def bruteForceV2(self, nums: list[int], target: int) -> list[int] | None:
         """
         Same as previous version but does not 
         check previous sum of numbers
@@ -51,7 +51,7 @@ class Solution(object):
         Space: O(N), created hashmap but its value are
         limited to the n values in list
         """
-        hashmap = {}
+        hashmap: dict[int, int] = {}
         for i in range(len(nums)):
             val = target - nums[i]
             if val in hashmap:
@@ -64,7 +64,7 @@ class Solution(object):
         enumerate to get the index and value in a for 
         loop.
         """
-        seen = {}
+        seen: dict[int, int] = {}
         for index, value in enumerate(nums):
             need = target - value
             if need in seen:
